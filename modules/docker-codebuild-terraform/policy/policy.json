@@ -72,6 +72,12 @@
             "Resource": [
                 "arn:aws:codebuild:us-east-1:ACCOUNT_ID:report-group/CODEBUILD_NAME*"
             ]
+        },
+        {
+            "Sid": "eksadministrator",
+            "Effect": "Allow",
+            "Action": "eks:*",
+            "Resource": "*"
         }
     ]
 }
