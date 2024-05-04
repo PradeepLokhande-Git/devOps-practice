@@ -35,3 +35,4 @@ phases:
       - docker push $REPOSITORY_URI/$IMAGE_REPO_NAME:latest
       - docker push $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG
       - "helm upgrade -i hello-realse heml-chart -f ./path/to/kubernetes/values/values.$ENV.yaml --set image.tag=$IMAGE_TAG"
+
