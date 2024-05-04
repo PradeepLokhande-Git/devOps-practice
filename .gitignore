@@ -1,10 +1,12 @@
 # Local .terraform directories
 **/.terraform/*
 **/.terragrunt/*
+**/.terragrunt-cache/*
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
+*.terraform.lock.*
 
 # Crash log files
 crash.log
