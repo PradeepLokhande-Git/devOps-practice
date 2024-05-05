@@ -7,7 +7,7 @@ terraform {
     }
     required_version = ">= 0.14.9"
 }
-
+/*
 provider "aws" {
   region = var.region
   profile = "default"
@@ -15,7 +15,7 @@ provider "aws" {
       tags = var.prop_tags
   }
 }
-
+*/
 # simple codebuild project
 resource "aws_codebuild_project" "codebuild_project" {
   name          = var.codebuild_name
@@ -64,3 +64,4 @@ resource "aws_codebuild_project" "codebuild_project" {
     }
   }
 }
+
