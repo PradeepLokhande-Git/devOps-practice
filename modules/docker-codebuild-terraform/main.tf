@@ -19,7 +19,7 @@ provider "aws" {
 # simple codebuild project
 resource "aws_codebuild_project" "codebuild_project" {
   name          = var.codebuild_name
-  description   = "Codebuild demo with Terraform"
+  description   = "Codebuild demo with Terraform."
   build_timeout = "120"
   service_role = aws_iam_role.role.arn
 

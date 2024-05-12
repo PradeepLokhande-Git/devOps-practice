@@ -38,13 +38,14 @@ provider "aws" {
 EOF
 }
 
+
 # Configure Terragrunt to automatically store tfstate files in an S3 bucket
 remote_state {
   backend = "s3"
   config = {
     encrypt        = true
-    bucket         = "${get_env("TG_BUCKET_PREFIX", "")}terragrunt-example-tf-state-${local.account_name}-${local.aws_region}"
-    key            = "${path_relative_to_include()}/tf.tfstate"
+    bucket         = "terragrunt-example-tf-state-${local.account_name}-${local.aws_region}"
+    key            = format("%s/terraform.tfstate", path_relative_to_include())
     region         = local.aws_region
     dynamodb_table = "tf-locks"
   }
