@@ -1,7 +1,7 @@
 account_id = "211125766521"
 codebuild_params = {
       "NAME" = "codebuild-demo-terraform"
-      "GIT_REPO" = "https://github.com/PradeepLokhande-GSLab/docker-simple-webpage.git"
+      "GIT_REPO" = "https://github.com/PradeepLokhande-Git/devOps-practice.git"
       "IMAGE" = "aws/codebuild/standard:4.0"
       "TYPE" = "LINUX_CONTAINER"
       "COMPUTE_TYPE" = "BUILD_GENERAL1_SMALL"
