@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: public.ecr.aws/q3b8h4t9/guessthename_frontend 
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 3001
+  targetPort: 80
