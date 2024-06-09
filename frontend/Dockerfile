@@ -3,8 +3,10 @@ FROM node:16-alpine3.12 as build
 
 WORKDIR /app
 
-COPY package*.json ./
-COPY tsconfig.json ./
+#COPY package*.json ./
+#COPY tsconfig.json ./
+
+COPY . .
 
 Run npm install
 RUN npm install typescript -g
@@ -27,8 +29,9 @@ COPY ./env.sh .
 COPY .env-defaults .
 
 # Add bash
+#RUN apk --update --no-cache upgrade
 RUN apk add --no-cache bash
-
+#RUN apk add bash
 EXPOSE 80
 
 CMD ["/bin/bash", "-c", "/usr/share/nginx/html/env.sh && nginx -g \"daemon off;\""]
