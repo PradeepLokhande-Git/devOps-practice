@@ -2,8 +2,10 @@ FROM node:16-alpine3.12
 
 WORKDIR /app
 
-COPY package*.json ./
-COPY tsconfig.json ./
+#COPY package*.json ./
+#COPY tsconfig.json ./
+
+COPY . .
 
 RUN npm install
 RUN npm install typescript -g

@@ -4,7 +4,7 @@ codebuild_params = {
       "GIT_REPO" = "https://github.com/PradeepLokhande-Git/devOps-practice.git"
       "IMAGE" = "aws/codebuild/standard:4.0"
       "TYPE" = "LINUX_CONTAINER"
-      "COMPUTE_TYPE" = "BUILD_GENERAL1_SMALL"
+      "COMPUTE_TYPE" = "BUILD_GENERAL1_MEDIUM"
       "CRED_TYPE" = "CODEBUILD"
   } 
 
