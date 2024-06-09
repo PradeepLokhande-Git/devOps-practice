@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: mongo-express
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8081
+  targetPort: 8081
+  nodePort: 30000
