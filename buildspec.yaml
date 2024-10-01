@@ -33,8 +33,8 @@ phases:
       - echo Building the Docker image...  
 
       - docker build -f docker-simple-webpage/Dockerfile -t $REPOSITORY_URI/$IMAGE_REPO_NAME:latest .
-      - docker build -f api/Dockerfile -t $REPOSITORY_URI/$IMAGE_REPO_NAME:latest .   
-      - docker build -f frontend/Dockerfile -t $REPOSITORY_URI/$IMAGE_REPO_NAME:latest .
+      #- docker build -f api/Dockerfile -t $REPOSITORY_URI/$IMAGE_REPO_NAME:latest .   
+      #- docker build -f frontend/Dockerfile -t $REPOSITORY_URI/$IMAGE_REPO_NAME:latest .
 
       - docker tag $REPOSITORY_URI/$IMAGE_REPO_NAME:latest $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG   
       
