@@ -28,9 +28,9 @@ generate "provider" {
 provider "aws" {
   region = "${local.aws_region}"
   profile = "default"
-  default_tags {
-      tags = var.prop_tags
-  }
+#  default_tags {
+#      tags = var.prop_tags
+#  }
 
   # Only these AWS Account IDs may be operated on by this template
   allowed_account_ids = ["${local.account_id}"]

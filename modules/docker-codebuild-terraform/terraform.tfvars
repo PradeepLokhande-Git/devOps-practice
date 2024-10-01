@@ -11,6 +11,6 @@ codebuild_params = {
 environment_variables = {
       "AWS_DEFAULT_REGION" = "us-east-1"
       "AWS_ACCOUNT_ID" = "211125766521"
-      "IMAGE_REPO_NAME" = "spring-app"
+      "IMAGE_REPO_NAME" = "devops_practice_1223333"
       "IMAGE_TAG" = "latest"
   }

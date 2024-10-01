@@ -1,21 +1,21 @@
 #
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.10.0"
-    }
-  }
-}
+#terraform {
+#  required_providers {
+#    aws = {
+#      source  = "hashicorp/aws"
+#      version = "5.10.0"
+#    }
+#  }
+#}
 #Configure the AWS Provider
-provider "aws" {
-  region = "us-east-1"
-}
+#provider "aws" {
+#  region = "us-east-1"
+#}
 
 #Create EC2 Instance
 resource "aws_instance" "jenkins-ec2" {
   ami           = "ami-07caf09b362be10b8"
-  instance_type = "t2.medium"
+  instance_type = "t2.small"
   key_name      = "pradeep-devops-account"
   user_data     = file("install_jenkins.sh")
   vpc_security_group_ids = [aws_security_group.myjenkins_sg.id]

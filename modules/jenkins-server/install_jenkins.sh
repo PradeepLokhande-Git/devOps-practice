@@ -39,5 +39,5 @@ sudo curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/
 sudo chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 
-sudo yum install -y nodejs14
+sudo yum install -y nodejs
 
