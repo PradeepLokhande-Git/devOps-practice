@@ -44,4 +44,5 @@ phases:
       - echo Pushing the Docker image...
       #- docker push $REPOSITORY_URI/$IMAGE_REPO_NAME:latest
       - docker push $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - docker pull $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG
       - helm install first-helm-realse docker-simple-webpage/test-chart
