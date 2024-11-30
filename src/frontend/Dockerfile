@@ -18,7 +18,8 @@ RUN apk add build-base
 WORKDIR /src
 
 # restore dependencies
-COPY go.mod go.sum ./
+COPY go.mod ./
+COPY go.sum ./
 RUN go mod download
 COPY . .
 
