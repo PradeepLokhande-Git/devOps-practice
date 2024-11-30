@@ -23,10 +23,10 @@ resource "aws_instance" "jenkins-ec2" {
     Name = "Jenkins-Server"
   }
 }
-/*
+
 resource "aws_ebs_volume" "ebs-vol" {
   availability_zone = aws_instance.jenkins-ec2.availability_zone
-  size              = 20
+  size              = 30
   tags = {
     Name = "Jenkins_ebs_volume"
   }
@@ -48,7 +48,7 @@ output "volume_id" {
 output "attachment_id" {
   value = aws_volume_attachment.ebs-attach.id
 }
-*/
+
 #Create security group 
 resource "aws_security_group" "myjenkins_sg" {
   name        = "pradeep-jenkins_sg"

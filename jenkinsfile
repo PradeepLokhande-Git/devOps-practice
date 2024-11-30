@@ -1,0 +1,164 @@
+
+pipeline {
+    agent any
+    environment {
+        SCANNER_HOME=tool 'sonar-scanar'
+    }
+    stages {
+        stage('git checkout') {
+            steps {
+                git branch: 'latest', url: 'https://github.com/PradeepLokhande-Git/online-store.git'
+            }
+        }
+        stage('SonarQube') {
+            steps {
+                withSonarQubeEnv('sonar-server') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=10-Tier -Dsonar.ProjectName=10-Tier -Dsonar.java.binaries=. '''   
+                }
+                    
+            }
+                
+        }
+        stage('adservice'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/adservice') {
+                            sh 'docker build -t pradeeplokhande/adservice:latest .'
+                            sh 'docker push pradeeplokhande/adservice'
+                        }
+                    }
+            }
+            }
+        } 
+        stage('cartservice'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/cartservice/src/') {
+                            sh 'docker build -t pradeeplokhande/cartservice:latest .'
+                            sh 'docker push pradeeplokhande/cartservice'
+                        }
+                    }
+            }
+            }
+        }  
+        stage('checkoutservice'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/checkoutservice/') {
+                            sh 'docker build -t pradeeplokhande/checkoutservice:latest .'
+                            sh 'docker push pradeeplokhande/checkoutservice'
+                        }
+                    }
+            }
+            }
+        }
+        
+        stage('currencyservice'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/currencyservice/') {
+                            sh 'docker build -t pradeeplokhande/currencyservice:latest .'
+                            sh 'docker push pradeeplokhande/currencyservice'
+                        }
+                    }
+            }
+            }
+        }
+        
+        stage('emailservice'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/emailservice/') {
+                            sh 'docker build -t pradeeplokhande/emailservice:latest .'
+                            sh 'docker push pradeeplokhande/emailservice'
+                        }
+                    }
+            }
+            }
+        }
+        
+        stage('frontend'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/frontend/') {
+                            sh 'docker build -t pradeeplokhande/frontend:latest .'
+                            sh 'docker push pradeeplokhande/frontend'
+                        }
+                    }
+            }
+            }
+        }
+    
+        stage('loadgenerator'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/loadgenerator/') {
+                            sh 'docker build -t pradeeplokhande/loadgenerator:latest .'
+                            sh 'docker push pradeeplokhande/loadgenerator'
+                        }
+                    }
+            }
+            }
+        }
+    
+        stage('paymentservice'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/paymentservice/') {
+                            sh 'docker build -t pradeeplokhande/paymentservice:latest .'
+                            sh 'docker push pradeeplokhande/paymentservice'
+                        }
+                    }
+            }
+            }
+        }
+        
+        stage('productcatalogservice'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/productcatalogservice/') {
+                            sh 'docker build -t pradeeplokhande/productcatalogservice:latest .'
+                            sh 'docker push pradeeplokhande/productcatalogservice'
+                        }
+                    }
+            }
+            }
+        }
+        
+        stage('recommendationservice'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/recommendationservice/') {
+                            sh 'docker build -t pradeeplokhande/recommendationservice:latest .'
+                            sh 'docker push pradeeplokhande/recommendationservice'
+                        }
+                    }
+            }
+            }
+        }
+        
+        stage('shippingservice'){
+            steps{
+             script{
+              withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        dir('/var/lib/jenkins/workspace/10-app-service/src/shippingservice/') {
+                            sh 'docker build -t pradeeplokhande/shippingservice:latest .'
+                            sh 'docker push pradeeplokhande/shippingservice'
+                        }
+                    }
+            }
+            }
+        }        
+        
+    }
+}
