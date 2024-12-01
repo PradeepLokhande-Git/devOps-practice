@@ -24,8 +24,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/adservice') {
-                            sh 'docker build -t pradeeplokhande/adservice:latest .'
-                            sh 'docker push pradeeplokhande/adservice'
+                            sh 'docker build -t pradeeplokhande/adservice:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/adservice:v0.7.0'
                         }
                     }
             }
@@ -36,8 +36,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/cartservice/src/') {
-                            sh 'docker build -t pradeeplokhande/cartservice:latest .'
-                            sh 'docker push pradeeplokhande/cartservice'
+                            sh 'docker build -t pradeeplokhande/cartservice:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/cartservice:v0.7.0'
                         }
                     }
             }
@@ -48,8 +48,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/checkoutservice/') {
-                            sh 'docker build -t pradeeplokhande/checkoutservice:latest .'
-                            sh 'docker push pradeeplokhande/checkoutservice'
+                            sh 'docker build -t pradeeplokhande/checkoutservice:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/checkoutservice:v0.7.0'
                         }
                     }
             }
@@ -61,8 +61,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/currencyservice/') {
-                            sh 'docker build -t pradeeplokhande/currencyservice:latest .'
-                            sh 'docker push pradeeplokhande/currencyservice'
+                            sh 'docker build -t pradeeplokhande/currencyservice:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/currencyservice:v0.7.0'
                         }
                     }
             }
@@ -74,8 +74,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/emailservice/') {
-                            sh 'docker build -t pradeeplokhande/emailservice:latest .'
-                            sh 'docker push pradeeplokhande/emailservice'
+                            sh 'docker build -t pradeeplokhande/emailservice:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/emailservice:v0.7.0'
                         }
                     }
             }
@@ -87,8 +87,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/frontend/') {
-                            sh 'docker build -t pradeeplokhande/frontend:latest .'
-                            sh 'docker push pradeeplokhande/frontend'
+                            sh 'docker build -t pradeeplokhande/frontend:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/frontend:v0.7.0'
                         }
                     }
             }
@@ -100,8 +100,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/loadgenerator/') {
-                            sh 'docker build -t pradeeplokhande/loadgenerator:latest .'
-                            sh 'docker push pradeeplokhande/loadgenerator'
+                            sh 'docker build -t pradeeplokhande/loadgenerator:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/loadgenerator:v0.7.0'
                         }
                     }
             }
@@ -113,8 +113,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/paymentservice/') {
-                            sh 'docker build -t pradeeplokhande/paymentservice:latest .'
-                            sh 'docker push pradeeplokhande/paymentservice'
+                            sh 'docker build -t pradeeplokhande/paymentservice:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/paymentservice:v0.7.0'
                         }
                     }
             }
@@ -126,8 +126,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/productcatalogservice/') {
-                            sh 'docker build -t pradeeplokhande/productcatalogservice:latest .'
-                            sh 'docker push pradeeplokhande/productcatalogservice'
+                            sh 'docker build -t pradeeplokhande/productcatalogservice:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/productcatalogservice:v0.7.0'
                         }
                     }
             }
@@ -139,8 +139,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/recommendationservice/') {
-                            sh 'docker build -t pradeeplokhande/recommendationservice:latest .'
-                            sh 'docker push pradeeplokhande/recommendationservice'
+                            sh 'docker build -t pradeeplokhande/recommendationservice:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/recommendationservice:v0.7.0'
                         }
                     }
             }
@@ -152,8 +152,8 @@ pipeline {
              script{
               withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                         dir('/var/lib/jenkins/workspace/10-app-service/src/shippingservice/') {
-                            sh 'docker build -t pradeeplokhande/shippingservice:latest .'
-                            sh 'docker push pradeeplokhande/shippingservice'
+                            sh 'docker build -t pradeeplokhande/shippingservice:v0.7.0 .'
+                            sh 'docker push pradeeplokhande/shippingservice:v0.7.0'
                         }
                     }
             }
