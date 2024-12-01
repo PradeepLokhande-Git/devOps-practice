@@ -1,23 +1,10 @@
-#
-#terraform {
-#  required_providers {
-#    aws = {
-#      source  = "hashicorp/aws"
-#      version = "5.10.0"
-#    }
-#  }
-#}
-#Configure the AWS Provider
-#provider "aws" {
-#  region = "us-east-1"
-#}
-
 #Create EC2 Instance
 resource "aws_instance" "jenkins-ec2" {
-  ami           = "ami-07caf09b362be10b8"
+  #ami           = "ami-07caf09b362be10b8"
+  ami           = "ami-0d41d3a3a99ce3e8b"
   instance_type = "t2.small"
   key_name      = "pradeep-devops-account"
-  user_data     = file("install_jenkins.sh")
+  #user_data     = file("install_jenkins.sh")
   vpc_security_group_ids = [aws_security_group.myjenkins_sg.id]
   tags = {
     Name = "Jenkins-Server"
@@ -26,7 +13,7 @@ resource "aws_instance" "jenkins-ec2" {
 
 resource "aws_ebs_volume" "ebs-vol" {
   availability_zone = aws_instance.jenkins-ec2.availability_zone
-  size              = 30
+  size              = 40
   tags = {
     Name = "Jenkins_ebs_volume"
   }
@@ -62,7 +49,7 @@ resource "aws_security_group" "myjenkins_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["104.30.160.2/32"]
+    cidr_blocks = ["104.30.176.1/32"]
   }
   #Allow incoming TCP requests on port 443 from any IP
   ingress {
@@ -70,7 +57,7 @@ resource "aws_security_group" "myjenkins_sg" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = ["104.30.160.2/32"]
+    cidr_blocks = ["104.30.176.1/32"]
   }
 
   #Allow incoming TCP requests on port 8080 from any IP
@@ -78,7 +65,7 @@ resource "aws_security_group" "myjenkins_sg" {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["104.30.160.2/32"]
+    cidr_blocks = ["104.30.176.1/32"]
   }
 
   #Allow all outbound requests
