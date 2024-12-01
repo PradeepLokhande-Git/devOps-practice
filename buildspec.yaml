@@ -40,13 +40,13 @@ phases:
       - echo Building the Docker image...  
 
       #- docker build -f docker-simple-webpage/Dockerfile -t $REPOSITORY_URI/$IMAGE_REPO_NAME:latest .
-      - docker build --no-cache -f src/frontend/Dockerfile -t $REPOSITORY_URI/$IMAGE_REPO_NAME:latest .
-      - docker tag $REPOSITORY_URI/$IMAGE_REPO_NAME:latest $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG   
+      - docker build -f src/frontend/Dockerfile .
+      #- docker tag $REPOSITORY_URI/$IMAGE_REPO_NAME:latest $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG   
       
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG
-      - docker pull $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG
+      #- docker push $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG
+      #- docker pull $REPOSITORY_URI/$IMAGE_REPO_NAME:$IMAGE_TAG
       #- helm install first-helm-realse docker-simple-webpage/test-chart
