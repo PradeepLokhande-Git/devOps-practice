@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                git branch: 'latest', url: 'https://github.com/PradeepLokhande-Git/online-store.git'
+                git branch: 'latest', url: 'https://github.com/PradeepLokhande-Git/devOps-practice.git'
             }
         }
         stage('SonarQube') {
