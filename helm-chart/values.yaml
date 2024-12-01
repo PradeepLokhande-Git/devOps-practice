@@ -4,7 +4,7 @@
 
 images:
   #repository: gcr.io/google-samples/microservices-demo
-  repository: https://hub.docker.com/repositories/pradeeplokhande
+  repository: pradeeplokhande
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
